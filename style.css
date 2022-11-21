@@ -1,0 +1,386 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body,
+.container,
+header,
+main,
+label,
+section,
+.currency-container,
+.currency-value,
+.section-input-data,
+.radio,
+.lbl-radio,
+.label-box,
+.section-form,
+.grid-radio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ccc;
+    padding: 0 10px;
+}
+
+.container {
+    width: 100%;
+    width: 1000px;
+    height: 95vh;
+    flex-direction: column;
+    background-color: #ddd;
+    justify-content: space-between;
+    box-shadow: 0 0 10px black, inset 0 0 5px black;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    padding: 10px 5px;
+    background-color: rgb(0, 97, 187);
+    box-shadow: 0 0 10px black, inset 0 0 5px black;
+}
+
+header h1 {
+    font-weight: bold;
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+}
+
+main {
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 500px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    gap: 10px;
+}
+
+label {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+    position: relative;
+}
+
+/*          Section-view            */
+.section-view {
+    width: 100%;
+    height: 50%;
+    gap: 10px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-view .currency-container {
+    width: 100%;
+    height: 100%;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    position: relative;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 0 15px black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.currency-value {
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2.5rem;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    padding: 10px;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.575) 90%);
+}
+
+.currency-container .currency-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, rgb(0, 0, 0) 100%);
+}
+
+/*          Radio Buttons         */
+
+.section-form {
+    justify-content: space-evenly;
+    width: 100%;
+    height: 20%;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.grid-radio {
+    flex-direction: column;
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+}
+
+.grid-radio .tittle {
+    color: rgb(68, 68, 68);
+    font-weight: bold;
+    text-align: center;
+    font-size: 1rem;
+    width: 100%;
+    position: absolute;
+    top: -15px;
+    left: 0;
+}
+
+input[type='radio'] {
+    display: none;
+}
+
+input[type='radio']:checked+.label-radio .currency-img {
+    animation: pulse .5s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+input[type='radio']:checked+.label-radio .currency-name {
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
+    color: #fff;
+    z-index: 1;
+}
+
+input[type='radio']:checked+.label-radio .label-box {
+
+    color: #fff;
+    z-index: 1;
+}
+
+
+.radio {
+    align-items: flex-end;
+    gap: 5px;
+    width: 100%;
+    padding: 5px 5px 15px 5px;
+}
+
+.label-box {
+    width: 100%;
+    max-width: 100px;
+    gap: 15px;
+    flex-direction: column;
+    transition: .8s ease-in-out;
+    border-radius: 20px;
+}
+
+.label-box .currency-name {
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    font-size: .85rem;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    color: #000;
+    padding: 5px 10px;
+    transition: .8s ease-in-out;
+    border-radius: 20px;
+}
+
+.label-box .currency-img {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.3em;
+    text-shadow: -2px -2px 5px #fff;
+    filter: drop-shadow(4px 4px 10px #fff);
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.08),
+        0px 10px 5px rgba(0, 0, 0, 0.1),
+        0px 15px 10px rgba(0, 0, 0, 0.1),
+        inset -5px -5px 7.5px rgba(255, 255, 255, 0.8);
+    transition: .5s ease-in-out;
+}
+
+.label-box>.currency-img.euro {
+    padding: 18px 18px 18px 10px;
+    background-color: rgb(6, 98, 218);
+}
+
+.label-box .currency-img::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    background-color: #fff;
+    width: 15%;
+    height: 15%;
+    border-radius: 50%;
+    filter: blur(2.5px);
+}
+
+.label-box .currency-img::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 30%;
+    background-color: #fff;
+    width: 5%;
+    height: 5%;
+    border-radius: 50%;
+    filter: blur(2.5px);
+}
+
+.label-box .currency-img img {
+    width: 100%;
+    height: 100%;
+}
+
+/*          Section Data            */
+
+.section-input-data {
+    width: 100%;
+    height: 12%;
+    gap: 10px 0;
+    position: relative;
+    align-items: flex-end;
+}
+
+.input-money {
+    width: 95%;
+    position: relative;
+    text-align: center;
+    outline: none;
+    padding: 8px;
+    font-size: 1.2rem;
+    border: none;
+    box-shadow: 0 0 10px black;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+    border-radius: 30px;
+}
+
+.input-money.error {
+    border: 2px solid red;
+    opacity: 1;
+}
+
+.convert-button {
+    background-color: rgb(0, 132, 255);
+    border: none;
+    width: 100%;
+    max-width: 350px;
+    padding: 5px;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+    box-shadow: inset 0 0 5px black,
+        0 0 10px black, inset 0 0 5px black;
+    border-radius: 30px;
+}
+
+.convert-button:hover {
+    filter: contrast(110%);
+}
+
+.convert-button.error {
+    background-color: red;
+    opacity: 1;
+}
+
+.success {
+    background-color: rgb(0, 255, 76);
+    opacity: 1;
+}
+
+@media (max-width:750px) {
+    .section-view {
+        height: 40%;
+    }
+
+    .section-form {
+        height: 40%;
+        flex-wrap: wrap;
+    }
+
+    .section-input-data {
+        height: 20%;
+        flex-wrap: wrap;
+    }
+
+    .currency-value {
+        font-size: 1.5rem;
+    }
+
+    .label-box .currency-img {
+        width: 90px;
+        height: 90px;
+
+    }
+
+    header {
+        width: 100%;
+        height: 60px;
+        padding: 5px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+
+@media (max-width:450px) {
+    .section-view {
+        flex-direction: column;
+    }
+
+    .label-box .currency-img {
+        width: 65px;
+        height: 65px;
+
+    }
+}

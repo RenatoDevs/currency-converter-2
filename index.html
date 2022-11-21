@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>currency converter</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Currency Converter</h1>
+        </header>
+        <main>
+            <section class="section-view">
+                <div class="currency-container">
+                    <img id="currency-from-img" src="./assets/images/br.png" class="currency-img"
+                        alt="bandeira do brasil">
+                    <p id="real-value-text" class="currency-value">0</p>
+                </div>
+
+                <div class="currency-container">
+                    <img id="currency-for-img" class="currency-img" src="./assets/images/usd.png"
+                        alt="bandeira dos Estados Unidos">
+                        <p id="currency-value-text" class="currency-value">0</p>
+                </div>
+            </section>
+
+            <section class="section-form">
+                <div class="grid-radio">
+                    <p class="tittle">De</p>
+                <!-- from -->
+                <form action="" id='radio-from' class="radio">
+                    <!-- Real-->
+                    <input type="radio" id="brl-from" name="radio-from" value="brl" checked>
+                    <label for="brl-from" class="label-radio">
+                        <div class="label-box">
+                            <div class="currency-img">
+                                <img src="./assets/images/br.png" alt="Real">
+                            </div>
+                            <p class="currency-name">Real</p>
+                        </div>
+                    </label>
+                    <!-- Dólar-->
+                    <input type="radio" id="usd-from" name="radio-from" value="usd">
+                    <label for="usd-from" class="label-radio">
+                        <div class="label-box">
+                            <div class="currency-img">
+                                <img src="./assets/images/usd.png" alt="dolar">
+                            </div>
+                            <p class="currency-name">Dólar</p>
+                        </div>
+                    </label>
+                    <!-- Euro-->
+                    <input type="radio" id="eur-from" name="radio-from" value="eur">
+                    <label for="eur-from" class="label-radio">
+                        <div class="label-box">
+                            <div class="currency-img euro">
+                                <img src="./assets/images/eur.png" alt="euros">
+                            </div>
+                            <p class="currency-name">Euro</p>
+                        </div>
+                    </label>
+                    <!-- Bitcoin-->
+                    <input type="radio" id="btc-from" name="radio-from" value="btc">
+                    <label for="btc-from" class="label-radio">
+                        <div class="label-box">
+                            <div class="currency-img">
+                                <img src="./assets/images/btc.png" alt="Bitcoin">
+                            </div>
+                            <p class="currency-name">Bitcoin</p>
+                        </div>
+                    </label>
+                </form>
+            </div>
+            <div class="grid-radio">
+                <p class="tittle">Para</p>
+                <!-- For -->
+                <form action="" id='radio-for' class="radio">
+                    <!-- Real-->
+                    <input type="radio" id="brl" name="radio-for" value="brl">
+                    <label for="brl" class="label-radio">
+                        <div class="label-box">
+                            <div class="currency-img">
+                                <img src="./assets/images/br.png" alt="Real">
+                            </div>
+                            <p class="currency-name">Real</p>
+                        </div>
+                    </label>
+                    <!-- Dólar-->
+                    <input type="radio" id="usd" name="radio-for" value="usd" checked>
+                    <label for="usd" class="label-radio">
+                        <div class="label-box">
+                            <div class="currency-img">
+                                <img src="./assets/images/usd.png" alt="dolar">
+                            </div>
+                            <p class="currency-name">Dólar</p>
+                        </div>
+                    </label>
+                    <!-- Euro-->
+                    <input type="radio" id="eur" name="radio-for" value="eur">
+                    <label for="eur" class="label-radio">
+                        <div class="label-box">
+                            <div class="currency-img euro">
+                                <img src="./assets/images/eur.png" alt="euros">
+                            </div>
+                            <p class="currency-name">Euro</p>
+                        </div>
+                    </label>
+                    <!-- Bitcoin-->
+                    <input type="radio" id="btc" name="radio-for" value="btc">
+                    <label for="btc" class="label-radio">
+                        <div class="label-box">
+                            <div class="currency-img">
+                                <img src="./assets/images/btc.png" alt="Bitcoin">
+                            </div>
+                            <p class="currency-name">Bitcoin</p>
+                        </div>
+                    </label>
+                </form>
+            </div>
+            </section>
+            <section class="section-input-data">
+                <label>
+                    Valor:
+                    <input id="input-money" class="input-money" type="number" placeholder="Digite um valor Ex:R$ 100"
+                        required />
+                </label>
+                <button class="convert-button" type="button">Converter</button>
+            </section>
+        </main>
+    </div>
+    <script src="./script.js">
+
+
+
+
+    </script>
+</body>
+
+</html>
