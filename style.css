@@ -116,7 +116,6 @@ label {
     overflow-wrap: break-word;
     word-break: break-all;
     padding: 10px;
-    z-index: 1;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -205,7 +204,7 @@ input[type='radio']:checked+.label-radio .label-box {
 .label-box {
     width: 100%;
     max-width: 100px;
-    gap: 15px;
+    gap: 5px;
     flex-direction: column;
     transition: .8s ease-in-out;
     border-radius: 20px;
@@ -226,8 +225,8 @@ input[type='radio']:checked+.label-radio .label-box {
 
 .label-box .currency-img {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     padding: 5px;
     border-radius: 50%;
     display: flex;
@@ -245,7 +244,7 @@ input[type='radio']:checked+.label-radio .label-box {
 
 .label-box>.currency-img.euro {
     padding: 18px 18px 18px 10px;
-    background-color: rgb(6, 98, 218);
+    background-color: rgb(6, 27, 218);
 }
 
 .label-box .currency-img::before {
@@ -336,9 +335,9 @@ input[type='radio']:checked+.label-radio .label-box {
     opacity: 1;
 }
 
-@media (max-width:750px) {
+@media (max-width:800px) {
     .section-view {
-        height: 40%;
+        height: 35%;
     }
 
     .section-form {
@@ -356,8 +355,8 @@ input[type='radio']:checked+.label-radio .label-box {
     }
 
     .label-box .currency-img {
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
 
     }
 
@@ -374,6 +373,10 @@ input[type='radio']:checked+.label-radio .label-box {
 
 
 @media (max-width:450px) {
+    .container{
+        height: 87vh;
+        padding-bottom: 10px;
+    }
     .section-view {
         flex-direction: column;
     }
