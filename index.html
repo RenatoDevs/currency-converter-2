@@ -25,107 +25,167 @@
                 <div class="currency-container">
                     <img id="currency-for-img" class="currency-img" src="./assets/images/usd.png"
                         alt="bandeira dos Estados Unidos">
-                        <p id="currency-value-text" class="currency-value">0</p>
+                    <p id="currency-value-text" class="currency-value">0</p>
                 </div>
             </section>
 
             <section class="section-form">
                 <div class="grid-radio">
-                    <p class="tittle">De:</p>
-                <!-- from -->
-                <form action="" id='radio-from' class="radio">
-                    <!-- Real-->
-                    <input type="radio" id="brl-from" name="radio-from" value="brl" checked>
-                    <label for="brl-from" class="label-radio">
-                        <div class="label-box">
-                            <div class="currency-img">
-                                <img src="./assets/images/br.png" alt="Real">
+                    <!-- <p class="tittle">De:</p> -->
+                    <!-- from -->
+                    <form action="" id='radio-from' class="radio">
+                        <!-- Real-->
+                        <input type="radio" id="brl-from" name="radio-from" value="brl" checked>
+                        <label for="brl-from" class="label-radio">
+                            <div class="label-box">
+                                <div class="currency-img">
+                                    <img src="./assets/images/br.png" alt="Real">
+                                </div>
+                                <p class="currency-name">Real</p>
                             </div>
-                            <p class="currency-name">Real</p>
-                        </div>
-                    </label>
-                    <!-- Dólar-->
-                    <input type="radio" id="usd-from" name="radio-from" value="usd">
-                    <label for="usd-from" class="label-radio">
-                        <div class="label-box">
-                            <div class="currency-img">
-                                <img src="./assets/images/usd.png" alt="dolar">
+                        </label>
+                        <!-- Dólar-->
+                        <input type="radio" id="usd-from" name="radio-from" value="usd">
+                        <label for="usd-from" class="label-radio">
+                            <div class="label-box">
+                                <div class="currency-img">
+                                    <img src="./assets/images/usd.png" alt="dolar">
+                                </div>
+                                <p class="currency-name">Dólar</p>
                             </div>
-                            <p class="currency-name">Dólar</p>
-                        </div>
-                    </label>
-                    <!-- Euro-->
-                    <input type="radio" id="eur-from" name="radio-from" value="eur">
-                    <label for="eur-from" class="label-radio">
-                        <div class="label-box">
-                            <div class="currency-img euro">
-                                <img src="./assets/images/eur.png" alt="euros">
+                        </label>
+                        <!-- Euro-->
+                        <input type="radio" id="eur-from" name="radio-from" value="eur">
+                        <label for="eur-from" class="label-radio">
+                            <div class="label-box">
+                                <div class="currency-img">
+                                    <img src="./assets/images/eur.png" alt="euros">
+                                </div>
+                                <p class="currency-name">Euro</p>
                             </div>
-                            <p class="currency-name">Euro</p>
-                        </div>
-                    </label>
-                    <!-- Bitcoin-->
-                    <input type="radio" id="btc-from" name="radio-from" value="btc">
-                    <label for="btc-from" class="label-radio">
-                        <div class="label-box">
-                            <div class="currency-img">
-                                <img src="./assets/images/btc.png" alt="Bitcoin">
+                        </label>
+                        <!-- Bitcoin-->
+                        <input type="radio" id="btc-from" name="radio-from" value="btc">
+                        <label for="btc-from" class="label-radio">
+                            <div class="label-box">
+                                <div class="currency-img">
+                                    <img src="./assets/images/btc.png" alt="Bitcoin">
+                                </div>
+                                <p class="currency-name">Bitcoin</p>
                             </div>
-                            <p class="currency-name">Bitcoin</p>
-                        </div>
-                    </label>
-                </form>
-            </div>
-            <div class="grid-radio">
-                <p class="tittle">Para:</p>
-                <!-- For -->
-                <form action="" id='radio-for' class="radio">
-                    <!-- Real-->
-                    <input type="radio" id="brl" name="radio-for" value="brl">
-                    <label for="brl" class="label-radio">
-                        <div class="label-box">
-                            <div class="currency-img">
-                                <img src="./assets/images/br.png" alt="Real">
+                        </label>
+                        <!-- Libra Esterlina-->
+                        <input type="radio" id="gbp-from" name="radio-from" value="gbp">
+                        <label for="gbp-from" class="label-radio">
+                            <div class="label-box">
+                                <div class="currency-img">
+                                    <img src="./assets/images/gbp.png" alt="Libra Esterlina">
+                                </div>
+                                <p class="currency-name">Libra Esterlina</p>
                             </div>
-                            <p class="currency-name">Real</p>
-                        </div>
-                    </label>
-                    <!-- Dólar-->
-                    <input type="radio" id="usd" name="radio-for" value="usd" checked>
-                    <label for="usd" class="label-radio">
-                        <div class="label-box">
-                            <div class="currency-img">
-                                <img src="./assets/images/usd.png" alt="dolar">
+                        </label>
+                        <!-- iene-->
+                        <input type="radio" id="jpy-from" name="radio-from" value="jpy">
+                        <label for="jpy-from" class="label-radio">
+                            <div class="label-box">
+                                <div class="currency-img">
+                                    <img src="./assets/images/jpy.png" alt="Iene">
+                                </div>
+                                <p class="currency-name">Iene</p>
                             </div>
-                            <p class="currency-name">Dólar</p>
-                        </div>
-                    </label>
-                    <!-- Euro-->
-                    <input type="radio" id="eur" name="radio-for" value="eur">
-                    <label for="eur" class="label-radio">
-                        <div class="label-box">
-                            <div class="currency-img euro">
-                                <img src="./assets/images/eur.png" alt="euros">
+                        </label>
+                        <!-- peso argentino-->
+                        <input type="radio" id="ars-from" name="radio-from" value="ars">
+                        <label for="ars-from" class="label-radio">
+                            <div class="label-box">
+                                <div class="currency-img">
+                                    <img src="./assets/images/ars.png" alt="Bitcoin">
+                                </div>
+                                <p class="currency-name">Peso Argentino</p>
                             </div>
-                            <p class="currency-name">Euro</p>
-                        </div>
-                    </label>
-                    <!-- Bitcoin-->
-                    <input type="radio" id="btc" name="radio-for" value="btc">
-                    <label for="btc" class="label-radio">
-                        <div class="label-box">
-                            <div class="currency-img">
-                                <img src="./assets/images/btc.png" alt="Bitcoin">
+                        </label>
+                    </form>
+                </div>
+
+                <div class="grid-radio">
+                    <!-- <p class="tittle">Para:</p> -->
+                    <!-- For -->
+                    <form action="" id='radio-for' class="radio">
+                        <!-- Real-->
+                        <input type="radio" id="brl" name="radio-for" value="brl">
+                        <label for="brl" class="label-radio">
+                            <div class="label-box">
+                                <div class="currency-img">
+                                    <img src="./assets/images/br.png" alt="Real">
+                                </div>
+                                <p class="currency-name">Real</p>
                             </div>
-                            <p class="currency-name">Bitcoin</p>
-                        </div>
-                    </label>
-                </form>
-            </div>
+                        </label>
+                        <!-- Dólar-->
+                        <input type="radio" id="usd" name="radio-for" value="usd" checked>
+                        <label for="usd" class="label-radio">
+                            <div class="label-box">
+                                <div class="currency-img">
+                                    <img src="./assets/images/usd.png" alt="dolar">
+                                </div>
+                                <p class="currency-name">Dólar</p>
+                            </div>
+                        </label>
+                        <!-- Euro-->
+                        <input type="radio" id="eur" name="radio-for" value="eur">
+                        <label for="eur" class="label-radio">
+                            <div class="label-box">
+                                <div class="currency-img">
+                                    <img src="./assets/images/eur.png" alt="euros">
+                                </div>
+                                <p class="currency-name">Euro</p>
+                            </div>
+                        </label>
+                        <!-- Bitcoin-->
+                        <input type="radio" id="btc" name="radio-for" value="btc">
+                        <label for="btc" class="label-radio">
+                            <div class="label-box">
+                                <div class="currency-img">
+                                    <img src="./assets/images/btc.png" alt="Bitcoin">
+                                </div>
+                                <p class="currency-name">Bitcoin</p>
+                            </div>
+                        </label>
+                        <!-- Libra Esterlina-->
+                        <input type="radio" id="gbp-for" name="radio-for" value="gbp">
+                        <label for="gbp-for" class="label-radio">
+                            <div class="label-box">
+                                <div class="currency-img">
+                                    <img src="./assets/images/gbp.png" alt="Libra Esterlina">
+                                </div>
+                                <p class="currency-name">Libra Esterlina</p>
+                            </div>
+                        </label>
+                        <!-- iene-->
+                        <input type="radio" id="jpy-for" name="radio-for" value="jpy">
+                        <label for="jpy-for" class="label-radio">
+                            <div class="label-box">
+                                <div class="currency-img">
+                                    <img src="./assets/images/jpy.png" alt="Iene">
+                                </div>
+                                <p class="currency-name">Iene</p>
+                            </div>
+                        </label>
+                        <!-- peso argentino-->
+                        <input type="radio" id="ars-for" name="radio-for" value="ars">
+                        <label for="ars-for" class="label-radio">
+                            <div class="label-box">
+                                <div class="currency-img">
+                                    <img src="./assets/images/ars.png" alt="Bitcoin">
+                                </div>
+                                <p class="currency-name">Peso Argentino</p>
+                            </div>
+                        </label>
+                    </form>
+                </div>
             </section>
             <section class="section-input-data">
                 <label>
-                    Valor:
                     <input id="input-money" class="input-money" type="number" placeholder="Digite um valor Ex:R$ 100"
                         required />
                 </label>
@@ -133,12 +193,7 @@
             </section>
         </main>
     </div>
-    <script src="./script.js">
-
-
-
-
-    </script>
+    <script src="./script.js"></script>
 </body>
 
 </html>

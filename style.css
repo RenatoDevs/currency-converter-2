@@ -18,7 +18,8 @@ section,
 .lbl-radio,
 .label-box,
 .section-form,
-.grid-radio {
+.grid-radio,
+.label-box .currency-name {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,28 +29,22 @@ body {
     width: 100%;
     min-height: 100vh;
     background-color: #ccc;
-    padding: 0 10px;
 }
 
 .container {
     width: 100%;
-    width: 1000px;
-    height: 95vh;
+    min-height: 100vh;
     flex-direction: column;
     background-color: #ddd;
     justify-content: space-between;
-    box-shadow: 0 0 10px black, inset 0 0 5px black;
     position: relative;
-    overflow: hidden;
-    border-radius: 10px;
 }
 
 header {
     width: 100%;
-    height: 100px;
-    padding: 10px 5px;
+    height:40px;
+    padding: 10px;
     background-color: rgb(0, 97, 187);
-    box-shadow: 0 0 10px black, inset 0 0 5px black;
 }
 
 header h1 {
@@ -61,12 +56,13 @@ header h1 {
 
 main {
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     min-height: 500px;
     width: 100%;
-    height: 100%;
-    padding: 10px;
-    gap: 10px;
+    min-height: 95vh;
+    
+    padding:10px;
+    gap: 5px;
 }
 
 label {
@@ -83,9 +79,8 @@ label {
 /*          Section-view            */
 .section-view {
     width: 100%;
-    height: 50%;
+    height: 60vh;
     gap: 10px;
-    border-radius: 10px;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -94,18 +89,18 @@ label {
 
 .section-view .currency-container {
     width: 100%;
-    height: 100%;
+    height:100%;
     font-size: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
     position: relative;
     background-color: rgb(0, 0, 0);
-    box-shadow: 0 0 15px black;
-    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    border-radius: 5px;
     overflow: hidden;
+
 }
 
 .currency-value {
@@ -132,23 +127,40 @@ label {
     top: 0;
     left: 0;
     -webkit-mask-image: linear-gradient(to top, transparent 0%, rgb(0, 0, 0) 100%);
+
 }
 
 /*          Radio Buttons         */
 
 .section-form {
     justify-content: space-evenly;
+    align-items: flex-end;
     width: 100%;
-    height: 20%;
+    height: 30%;
     gap: 10px;
-    margin-top: 20px;
 }
 
 .grid-radio {
     flex-direction: column;
+    min-width: 350px;
     width: 100%;
-    border-radius: 10px;
-    position: relative;
+    border-radius: 15px 15px 0 0 ;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
+        inset -5px -5px 5px rgba(172, 172, 172, 0.5),
+        5px 5px 5px rgba(0, 0, 0, 0.05),
+        -5px -5px 5px rgba(255, 255, 255, 0.5);
+    gap: 5px;
+    overflow-x: scroll;
+    overscroll-behavior-inline: contain;
+}
+.grid-radio::-webkit-scrollbar{
+    height: 10px;
+}
+.grid-radio::-webkit-scrollbar-thumb{
+    background-color: rgba(37, 37, 37, 0.315);
+}
+.grid-radio::-webkit-scrollbar-track{
+    background-color: rgba(27, 27, 27, 0.151);
 }
 
 .grid-radio .tittle {
@@ -156,10 +168,11 @@ label {
     font-weight: bold;
     text-align: center;
     font-size: 1rem;
-    width: 100%;
     position: absolute;
-    top: -15px;
+    z-index: 1000;
+    top: 30px;
     left: 0;
+    text-transform: uppercase;
 }
 
 input[type='radio'] {
@@ -182,7 +195,6 @@ input[type='radio']:checked+.label-radio .currency-img {
 
 input[type='radio']:checked+.label-radio .currency-name {
     background-color: rgb(0, 0, 0);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
     color: #fff;
     z-index: 1;
 }
@@ -195,39 +207,47 @@ input[type='radio']:checked+.label-radio .label-box {
 
 
 .radio {
-    align-items: flex-end;
-    gap: 5px;
-    width: 100%;
-    padding: 5px 5px 15px 5px;
+    align-items: stretch;
+    gap: 10px;
+    min-width:100%;
+    height: 100%;
+    padding:10px;
+    margin-inline: auto;
+   
 }
-
 .label-box {
     width: 100%;
-    max-width: 100px;
+    width: 130px;
+    height: 100%;
     gap: 5px;
+    justify-content: space-around;
     flex-direction: column;
     transition: .8s ease-in-out;
-    border-radius: 20px;
+    word-wrap: break-word;
 }
 
 .label-box .currency-name {
     text-transform: uppercase;
     text-align: center;
     width: 100%;
-    font-size: .85rem;
+    height: 30px;
+    font-size: .6rem;
+    border-radius: 11px;
     font-weight: bold;
-    background-color: rgb(255, 255, 255);
+    padding: 0 5px;
+    word-wrap: break-word;
     color: #000;
-    padding: 5px 10px;
     transition: .8s ease-in-out;
-    border-radius: 20px;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
+        inset -5px -5px 5px rgba(172, 172, 172, 0.5),
+        5px 5px 5px rgba(0, 0, 0, 0.05),
+        -5px -5px 5px rgba(255, 255, 255, 0.5);
 }
 
 .label-box .currency-img {
     position: relative;
-    width: 90px;
-    height: 90px;
-    padding: 5px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -242,17 +262,13 @@ input[type='radio']:checked+.label-radio .label-box {
     transition: .5s ease-in-out;
 }
 
-.label-box>.currency-img.euro {
-    padding: 18px 18px 18px 10px;
-    background-color: rgb(6, 27, 218);
-}
 
 .label-box .currency-img::before {
     content: '';
     position: absolute;
     top: 25%;
     left: 15%;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.37);
     width: 15%;
     height: 15%;
     border-radius: 50%;
@@ -264,7 +280,7 @@ input[type='radio']:checked+.label-radio .label-box {
     position: absolute;
     top: 15%;
     left: 30%;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.486);
     width: 5%;
     height: 5%;
     border-radius: 50%;
@@ -280,24 +296,29 @@ input[type='radio']:checked+.label-radio .label-box {
 
 .section-input-data {
     width: 100%;
-    height: 12%;
-    gap: 10px 0;
+    height: 10%;
+    gap: 10px;
     position: relative;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .input-money {
-    width: 95%;
+    width: 100%;
     position: relative;
     text-align: center;
     outline: none;
-    padding: 8px;
-    font-size: 1.2rem;
+    padding: 12.5px;
+    font-size: 1.5rem;
+    font-weight: bold;
     border: none;
-    box-shadow: 0 0 10px black;
+    background-color: rgba(0, 0, 0, 0);
     cursor: pointer;
     transition: .4s ease-in-out;
-    border-radius: 30px;
+    border-radius: 10px;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.1),
+        inset -5px -5px 5px rgba(172, 172, 172, 0.5),
+        5px 5px 5px rgba(0, 0, 0, 0.08),
+        -5px -5px 5px rgba(255, 255, 255, 0.5);
 }
 
 .input-money.error {
@@ -310,15 +331,15 @@ input[type='radio']:checked+.label-radio .label-box {
     border: none;
     width: 100%;
     max-width: 350px;
-    padding: 5px;
+    padding: 12.5px;
     color: #fff;
     font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
     transition: .5s ease-in-out;
-    box-shadow: inset 0 0 5px black,
-        0 0 10px black, inset 0 0 5px black;
-    border-radius: 30px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4),
+        0 0 10px black, inset 0 0 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
 
 .convert-button:hover {
@@ -336,17 +357,18 @@ input[type='radio']:checked+.label-radio .label-box {
 }
 
 @media (max-width:800px) {
+    .main{
+        justify-content: center;
+    }
     .section-view {
-        height: 35%;
+        height: 40vh;
     }
 
     .section-form {
-        height: 40%;
         flex-wrap: wrap;
     }
 
     .section-input-data {
-        height: 20%;
         flex-wrap: wrap;
     }
 
@@ -359,31 +381,48 @@ input[type='radio']:checked+.label-radio .label-box {
         height: 80px;
 
     }
-
-    header {
-        width: 100%;
-        height: 60px;
-        padding: 5px;
-    }
-
     header h1 {
         font-size: 1.5rem;
+    }
+
+    .grid-radio {
+        padding: 10px;
+    }
+
+    .label-box .currency-name {
+
+        font-size: .6rem;
+        padding: 0 5px;
+
     }
 }
 
 
 @media (max-width:450px) {
-    .container{
-        height: 87vh;
-        padding-bottom: 10px;
-    }
     .section-view {
+        height: 40vh;
         flex-direction: column;
     }
 
     .label-box .currency-img {
-        width: 65px;
-        height: 65px;
+        width: 60px;
+        height: 60px;
 
     }
+    .label-box .currency-name {
+
+        font-size: .5em;
+        padding: 0 5px;
+        height: 25px;
+    }
+    .label-box {
+        width: 90px;
+    }
+    .input-money {
+        padding: 10px;
+        font-size: 1.3rem;
+        font-weight: bold;
+        
+    }
 }
+

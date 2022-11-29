@@ -35,7 +35,7 @@ const changeCurrencyFrom = () => {
 
     switch (selectValue) {
         case 'brl':
-            currencyImg.src = './assets/images/band-brasil.jpg';
+            currencyImg.src = './assets/images/band-brl.jpg';
             realValueText.innerHTML = new Intl.NumberFormat('pt-BR', {
                 style: 'currency',
                 currency: 'BRL'
@@ -55,7 +55,6 @@ const changeCurrencyFrom = () => {
                 style: 'currency',
                 currency: 'EUR'
             }).format(inputCoin);
-
             break;
         case 'btc':
             currencyImg.src = './assets/images/band-btc.jpg';
@@ -63,7 +62,27 @@ const changeCurrencyFrom = () => {
                 style: 'currency',
                 currency: 'BTC'
             }).format(inputCoin);
-
+            break;
+        case 'gbp':
+            currencyImg.src = './assets/images/band-gbp.png';
+            realValueText.innerHTML = new Intl.NumberFormat('en-IN', {
+                style: 'currency',
+                currency: 'GBP'
+            }).format(inputCoin);
+            break;
+        case 'jpy':
+            currencyImg.src = './assets/images/band-jpy.png';
+            realValueText.innerHTML = new Intl.NumberFormat('ja-JP', {
+                style: 'currency',
+                currency: 'JPY'
+            }).format(inputCoin);
+            break;
+        case 'ars':
+            currencyImg.src = './assets/images/band-ars.png';
+            realValueText.innerHTML = new Intl.NumberFormat('es-AR', {
+                style: 'currency',
+                currency: 'ARS'
+            }).format(inputCoin);
             break;
         default:
             return;
@@ -78,7 +97,7 @@ const changeCurrencyFor = () => {
     console.log(selectValue);
     switch (selectValue) {
         case 'brl':
-            currencyImg.src = './assets/images/band-brasil.jpg';
+            currencyImg.src = './assets/images/band-brl.jpg';
             currencyValueText.innerHTML = new Intl.NumberFormat('pt-BR', {
                 style: 'currency',
                 currency: 'BRL'
@@ -105,6 +124,27 @@ const changeCurrencyFor = () => {
                 currency: 'BTC'
             }).format(inputCoin);
             break;
+            case 'gbp':
+                currencyImg.src = './assets/images/band-gbp.png';
+                currencyValueText.innerHTML = new Intl.NumberFormat('en-IN', {
+                    style: 'currency',
+                    currency: 'GBP'
+                }).format(inputCoin);
+                break;
+        case 'jpy':
+            currencyImg.src = './assets/images/band-jpy.png';
+            currencyValueText.innerHTML = new Intl.NumberFormat('ja-JP', {
+                style: 'currency',
+                currency: 'JPY'
+            }).format(inputCoin);
+            break;
+        case 'ars':
+            currencyImg.src = './assets/images/band-ars.png';
+            currencyValueText.innerHTML = new Intl.NumberFormat('es-AR', {
+                style: 'currency',
+                currency: 'ARS'
+            }).format(inputCoin);
+            break;
         default:
             return;
     }
@@ -123,6 +163,9 @@ const convertCurrency = () => {
     let usd = 0;
     let eur = 0;
     let btc = 0;
+    let gbp = 0;
+    let jpy = 0;
+    let ars = 0;
 
     switch (selectValueFrom) {
         case 'brl': {
@@ -130,7 +173,10 @@ const convertCurrency = () => {
             usd = 0.18;
             eur = 0.19;
             btc = 0.000011;
-            console.log('braa')
+            gbp = 0.16;
+            jpy = 26.04;
+            ars = 31.05;
+            console.log('bra')
         }
             break;
         case 'usd':
@@ -138,27 +184,64 @@ const convertCurrency = () => {
             usd = 1;
             eur = 0.96;
             btc = 0.000060;
-            console.log('usdaa');
+            gbp = 0.83;
+            jpy = 138.60;
+            ars = 165.23;
+            console.log('usd');
             break;
         case 'eur':
             brl = 5.60;
             usd = 1.04;
             eur = 1;
             btc = 0.000062;
-            console.log('euraa');
+            gbp = 0.86;
+            jpy = 144.25;
+            ars = 171.95;
+            console.log('eur');
             break;
         case 'btc':
             brl = 90075.00;
             usd = 16682.10;
             eur = 16073.37;
             btc = 1;
-            console.log('btcaa');
+            gbp = 13656.59;
+            jpy = 2298717.13;
+            ars = 2740189.97;
+            console.log('btc');
+            break;
+        case 'gbp':
+            brl = 6.45;
+            usd = 1.21;
+            eur = 1.16;
+            btc = 0.000073;
+            gbp = 1;
+            jpy = 167.89;
+            ars = 200.17;
+            console.log('gbp');
+            break;
+        case 'jpy':
+            brl = 0.037;
+            usd = 0.0072;
+            eur = 0.0069;
+            btc = 0;
+            gbp = 0.0060;
+            jpy = 1;
+            ars = 1.19;
+            console.log('jpy');
+            break;
+        case 'ars':
+            brl = 0.0032;
+            usd = 0.0061;
+            eur = 0.0058;
+            btc = 0;
+            gbp = 0.0050;
+            jpy = 0, 84;
+            ars = 1;
+            console.log('ars');
             break;
         default:
             console.log('fim');
     }
-
-
 
     if (inputCoin === '') {
         buttonError();
@@ -194,6 +277,27 @@ const convertCurrency = () => {
                     currency: 'BTC'
                 }).format(inputCoin * btc);
                 console.log(inputCoin * btc);
+                break;
+            case 'gbp':
+                currencyValueText.innerHTML = new Intl.NumberFormat('en-IN', {
+                    style: 'currency',
+                    currency: 'GBP'
+                }).format(inputCoin * gbp);
+                console.log(inputCoin * gbp);
+                break;
+            case 'jpy':
+                currencyValueText.innerHTML = new Intl.NumberFormat('ja-JP', {
+                    style: 'currency',
+                    currency: 'JPY'
+                }).format(inputCoin * jpy);
+                console.log(inputCoin * jpy);
+                break;
+            case 'ars':
+                currencyValueText.innerHTML = new Intl.NumberFormat('es-AR', {
+                    style: 'currency',
+                    currency: 'ARS'
+                }).format(inputCoin * ars);
+                console.log(inputCoin * ars);
                 break;
             default:
                 return;
@@ -251,3 +355,4 @@ const initialize = () => {
 }
 
 initialize();
+
